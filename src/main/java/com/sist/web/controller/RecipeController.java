@@ -51,6 +51,19 @@ public class RecipeController {
 	 *      2. Service => 조립 (Repository / Mapper => 받은 값)
 	 *      3. Controller => 조립된 데이터만 받아서 HTML 전송 
 	 */
+	/*
+	 * 	 git init ==> 연결하는 폴더 생성
+	 * 	 git remote add origin git 주소 (git 연결)
+	 * 	 git add . => 보낼 데이터 모으기
+	 *   git commit -m ""
+	 *   git push -u origin main --force
+	 *   						=> 강제 전송
+	 *   -------------------------------------
+	 *   수정
+	 *   git add .
+	 *   git commit -m ""
+	 *   git push -u origin master
+	 */
 	
 	@GetMapping("/main/main")
 	public String main_main(@RequestParam(value="page",required = false) String page, Model model)
