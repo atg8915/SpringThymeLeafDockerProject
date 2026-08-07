@@ -63,8 +63,10 @@ public class RecipeController {
 		   page="1";
 	   List<Recipe> list=rService.recipeListData(Integer.parseInt(page));
 	   int[] pages=rService.getPageData(Integer.parseInt(page),12);
+	   int count=rService.recipeCount();
 	   model.addAttribute("pages", pages);
 	   model.addAttribute("list", list);
+	   model.addAttribute("count",count);
 	   // <th:block th:include="${main_html}"></th:block>
 	   // templates/main/home.html
 	   model.addAttribute("main_html", "main/home");
@@ -84,8 +86,22 @@ public class RecipeController {
 	   model.addAttribute("main_html", "recipe/chef");
 	   return "main/main";
    }
+   @GetMapping("/recipe/find")
+   public String recipe_find(Model model)
+   {
+   	model.addAttribute("main_html", "recipe/find");
+   	return "main/main";
+   }
+   @GetMapping("/recipe/chef_recipe")
+   public String chef_recipe(@RequestParam("chef")String chef, Model model)
+   {
+	   model.addAttribute("chef",chef);
+	   model.addAttribute("main_html", "recipe/chef_recipe");
+	   return "main/main";
+   }
 }
 
 
 
 
+  
