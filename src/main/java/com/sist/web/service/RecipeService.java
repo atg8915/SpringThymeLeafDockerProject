@@ -13,7 +13,6 @@ public interface RecipeService {
     public int[] getPageData(int page,int rowsize);
     public List<Chef> chefListData(int page);
     public int[] getPageDataFind(int mode,int page,int rowsize, String fd);
-    
-    
+    public RecipeDetail findByNo(int no);
     
 }
