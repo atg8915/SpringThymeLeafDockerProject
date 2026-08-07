@@ -30,7 +30,7 @@ p{
     </div>
     <div class="row" style="margin-top: 10px">
       <div class="col-sm-3" v-for="(vo,index) in find_list" :key="index">
-        <a href="#">
+        <a class="a-link" @click="change(vo.no)">
         <div class="thumbnail">
           <img :src="vo.poster"
           	   :title="vo.title"
@@ -108,6 +108,9 @@ p{
     		move(page){
     			this.curpage=page
     			this.dataRecv()
+    		},
+    		change(no){
+    			location.href="/recipe/detail?no="+no
     		}
     	},
     	components:{
